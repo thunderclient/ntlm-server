@@ -82,20 +82,3 @@ The server includes the following test credentials for authentication:
 curl -v --ntlm -u testuser:testpass http://localhost:3000/
 ```
 
-### Test different endpoints
-```bash
-# Health check (no auth)
-curl http://localhost:3000/health
-```
-
-## Testing with Postman
-
-1. Create a new request
-2. Set the URL to `http://localhost:3000`
-3. Go to Authorization tab
-4. Select "NTLM Authentication"
-5. Enter:
-   - Username: `testuser`
-   - Password: `testpass`  
-   - Domain: `TESTDOMAIN`
-6. Send the request
