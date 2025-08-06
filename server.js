@@ -2,16 +2,14 @@ const express = require('express');
 const cors = require('cors');
 const ntlm = require('express-ntlm');
 
-// Load environment variables from .env file
-require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
-const NTLM_DOMAIN = process.env.NTLM_DOMAIN || 'TESTDOMAIN';
+const PORT = 3000;
+const NTLM_DOMAIN = 'TESTDOMAIN';
 
 // Test credentials - in production, these would come from a database or AD
-const TEST_USERS = process.env.TEST_USERS ? 
-    JSON.parse(process.env.TEST_USERS) : {
+const TEST_USERS =  
+    {
         'testuser': { password: 'testpass', domain: NTLM_DOMAIN },
         'admin': { password: 'password123', domain: NTLM_DOMAIN },
         'john.doe': { password: 'secret456', domain: NTLM_DOMAIN },
